@@ -7,12 +7,11 @@ public:
         int next_indx = 0;
         int previous_indx = 0;
 
-        int minLength = nums.size();
+        int minLength = INT_MAX;
 
         while( next_indx < nums.size()){
 
             sum += nums[next_indx];
-            total += nums[next_indx];
             next_indx++;
 
             while(sum - nums[previous_indx] >= target){
@@ -20,12 +19,12 @@ public:
                 previous_indx++;
             }
 
-            if((sum >= target) && (minLength > (next_indx - previous_indx))){
-                minLength = (next_indx - previous_indx);
+            if(sum >= target){
+                minLength = min(minLength, (next_indx - previous_indx));
             }
         }
 
-        if(total < target){
+        if(minLength == INT_MAX){
             return 0;
         }else{
             return minLength;
