@@ -16,10 +16,10 @@ public:
 
             while(freq.size() > 2){
                 
-                int fruit = freq[fruits[previous_indx]];
+                int fruit = fruits[previous_indx];
 
-                if(--freq[fruits[previous_indx]] == 0){
-                    freq.erase(fruits[previous_indx]);
+                if(--freq[fruit] == 0){
+                    freq.erase(fruit);
                 }
 
                 previous_indx++;
