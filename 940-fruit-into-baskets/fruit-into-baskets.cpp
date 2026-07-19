@@ -8,9 +8,10 @@ public:
         
         unordered_map<int, int> freq;
 
-        for(; next_indx < fruits.size(); next_indx++){
+        while(next_indx < fruits.size()){
 
             freq[fruits[next_indx]]++;
+            next_indx++;
 
             while(freq.size() > 2){
 
@@ -23,13 +24,7 @@ public:
                 previous_indx++;
             }
 
-            int count = 0;
-
-            for(pair<int, int> baskets : freq){
-                count += (baskets.second);
-            }
-
-            maxCount = max(maxCount, count);
+            maxCount = max(maxCount, next_indx - previous_indx);
         }
 
         return maxCount;
