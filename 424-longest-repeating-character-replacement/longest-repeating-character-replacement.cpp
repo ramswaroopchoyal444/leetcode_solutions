@@ -16,11 +16,11 @@ public:
 
             maxfreq = max(maxfreq, freq[s[next_indx]]);
 
-            char maxfreqChar;
+            // char maxfreqChar;
 
-            if(maxfreq == freq[s[next_indx]]){
-                maxfreqChar = s[next_indx];
-            }
+            // if(maxfreq == freq[s[next_indx]]){
+            //     maxfreqChar = s[next_indx];
+            // }
 
             next_indx++;
 
@@ -28,18 +28,18 @@ public:
 
                 freq[s[previous_indx]]--;
 
-                if(char(s[previous_indx]) == maxfreqChar){
-                    maxfreq--;
-                }
+                // if(char(s[previous_indx]) == maxfreqChar){
+                //     maxfreq--;
+                // }
 
                 // Now here I've to check frequency of each element in map to update the maxfreq and maxfreqChar.
 
-                for(auto it : freq){
-                    if(it.second > maxfreq){
-                        maxfreq = it.second;
-                        maxfreqChar = it.first;
-                    }
-                }
+                // for(auto it : freq){
+                //     if(it.second > maxfreq){
+                //         maxfreq = it.second;
+                //         maxfreqChar = it.first;
+                //     }
+                // }
 
                 previous_indx++;
             }
