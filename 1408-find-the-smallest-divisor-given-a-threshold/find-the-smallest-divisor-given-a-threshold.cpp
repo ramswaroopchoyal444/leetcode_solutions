@@ -3,10 +3,14 @@ public:
     int smallestDivisor(vector<int>& nums, int threshold) {
 
         sort(nums.begin(), nums.end());
+
+        
         
         // Search Space = [1, nums[n-1]]
 
         int n = nums.size();
+
+        
         
         int low = 1, high = nums[n-1];
 
