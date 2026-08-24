@@ -2,27 +2,28 @@ class Solution {
 public:
     vector<int> resultArray(vector<int>& nums) {
         
-        vector<int> arr1, arr2, ans;
+        int n = nums.size();
 
-        arr1.push_back(nums[0]);
-        arr2.push_back(nums[1]);
+        vector<int> ans;
 
-        for(int i = 2; i < nums.size(); i++){
-            if(arr1.back() > arr2.back()){
-                arr1.push_back(nums[i]);
+        ans.push_back(nums[0]);
+        ans.push_back(nums[1]);
+
+        int indx1 = 0, indx2 = 1;
+
+        for(int i = 2; i < n; i++){
+            if(ans[indx1] > ans[indx2]){
+                ans.insert(ans.begin()+indx1+1,nums[i]);
+                indx1++;
+                indx2++;
             }else{
-                arr2.push_back(nums[i]);
+                ans.push_back(nums[i]);
+                indx2++;
             }
         }
 
-        for(int i = 0; i < arr1.size(); i++){
-            ans.push_back(arr1[i]);
-        }
-
-        for(int i = 0; i < arr2.size(); i++){
-            ans.push_back(arr2[i]);
-        }
-
         return ans;
+
+        
     }
 };
