@@ -12,9 +12,9 @@ public:
 
             int x = low + (high - low) / 2;
 
-            
+            bool y = (x % 2 == 0) ? (x / 2 <= n / (x + 1)) : ((x + 1) / 2 <= n / x);
 
-            if(((long long)x * (x + 1)) / 2  <= n){
+            if(y){
 
                 // store answer and move right for maximum answer - 
 
